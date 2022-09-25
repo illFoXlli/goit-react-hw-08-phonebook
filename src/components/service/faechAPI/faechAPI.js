@@ -34,7 +34,7 @@ export const faechApiMovieId = async movie_id => {
   };
 
   return await axios.get(`${url}${movie_id}`, { params }).then(res => {
-    return res.data.hits;
+    return res.data;
   });
 };
 
@@ -46,7 +46,7 @@ export const faechApiMovieCredits = async movie_id => {
   };
 
   return await axios.get(`${url}${movie_id}/credits`, { params }).then(res => {
-    return res.data.hits;
+    return res.data;
   });
 };
 
@@ -58,7 +58,7 @@ export const faechApiMovieReviews = async movie_id => {
   };
 
   return await axios.get(`${url}${movie_id}/reviews`, { params }).then(res => {
-    return res.data.hits;
+    return res.data;
   });
 };
 

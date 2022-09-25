@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { shadow } from 'styled-system';
 import {
   color,
   space,
@@ -19,6 +19,7 @@ const Box = styled('div')(
   grid,
   background,
   border,
-  position
+  position,
+  shadow
 );
 export default Box;

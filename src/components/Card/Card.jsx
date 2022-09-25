@@ -1,23 +1,21 @@
 import { ListCard, Img, Title, Span } from './Card.styled';
-import Box from '../Box';
+import Box from '../service/Box';
 
 const Card = ({ item }) => {
-  //   const { profile_path } = item;
-  //   const viewPoster = profile_path => {
-  //     //     if (profile_path === null) {
-  //     //       return `${defaultImg}`;
-  //     // }
-  //     return `https://image.tmdb.org/t/p/w300${profile_path}`;
-  //   };
+  const { poster_path } = item;
+  const imgNotFound =
+    'https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png';
+
+  const imgUrl = poster_path
+    ? `https://image.tmdb.org/t/p/w500${poster_path}`
+    : imgNotFound;
 
   return (
     <ListCard>
-      <li class="event__img">
-        {/* <Img class="img-src" loading="lazy" src={ } alt="Sports event" /> */}
-
+      <li>
         <Img
           alt="A lazy image"
-          src={`https://image.tmdb.org/t/p/w300${item.poster_path}`}
+          src={`https://image.tmdb.org/t/p/w300${imgUrl}`}
         />
       </li>
       <Box as="li" mt="4px">

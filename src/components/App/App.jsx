@@ -1,20 +1,28 @@
-import Layout from 'components/Layout';
+// import { useState } from 'react';
+import Layout from 'components/Layout/';
 import { Routes, Route } from 'react-router-dom';
 import { ErrorPage } from './App.styled';
+import Muvies from '../page/Movies';
+import TrendComponend from '../page/TrendComponend';
+import MovieDetails from 'components/page/MovieDetails';
+import CastMovie from '../../components/page/CastMovie';
+import ReviewsMovie from '../../components/page/ReviewsMovie';
 
 export const App = () => {
+  // const [idMuvies, setIdMuvies] = useState(null);
+
   return (
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="movies" element={'movies'}>
-            {/* <Route path="get-trending" element={'get-trending'}></Route> */}
+          <Route index element={<TrendComponend />} />
+          <Route path="/movies" element={<Muvies />} />
+          <Route path={'/movies/:movieId'} element={<MovieDetails />}>
+            <Route path="/movies/:movieId/reviews" element={<ReviewsMovie />} />
+            <Route path="/movies/:movieId/cast" element={<CastMovie />} />
           </Route>
         </Route>
-        <Route
-          path="*"
-          element={<ErrorPage>Такой станицы нету!</ErrorPage>}
-        ></Route>
+        <Route path="*" element={<ErrorPage>Такой станицы нету!</ErrorPage>} />
       </Routes>
     </>
   );
