@@ -9,7 +9,7 @@ const Card = ({ item }) => {
   //     // }
   //     return `https://image.tmdb.org/t/p/w300${profile_path}`;
   //   };
-  console.log(item);
+
   return (
     <ListCard>
       <li class="event__img">
@@ -20,14 +20,14 @@ const Card = ({ item }) => {
           src={`https://image.tmdb.org/t/p/w300${item.poster_path}`}
         />
       </li>
-      <Box as="li" mt="8px">
-        <Title>Тут будут заголовок</Title>
+      <Box as="li" mt="4px">
+        <Title>{item.title}</Title>
       </Box>
       <Box as="li" mt="4px">
-        <Span class="span">Тут какойто Спан</Span>
+        <Span>Release date:</Span>
       </Box>
-      <Box as="li" mt="4px" class="event__place">
-        <span>Тут Спан лакация без стиля</span>
+      <Box as="li" mt="4px">
+        <Span>{item.release_date}</Span>
       </Box>
     </ListCard>
   );

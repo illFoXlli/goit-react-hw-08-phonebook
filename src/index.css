@@ -1,12 +1,76 @@
 @import-normalize; /* bring in normalize.css styles */
-
-body {
+html {
+  scroll-behavior: smooth;
+  user-select: none;
+}
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+a {
+  list-style: none;
+  text-decoration: none;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  display: block;
+}
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+body {
+  background-color: var(--black-bg-color);
+  color: var(--pink-text-color);
+  font-family: var(--primary-text-font);
+  background: #2980b9; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffffff,
+    #6dd5fa,
+    #2980b9
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffffff,
+    #6dd5fa,
+    #2980b9
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  @media screen and (max-width: 768px) {
+    /* background-image: url(../images/main-bg/bg-body-phone.png); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100vw 3000px;
+  }
+
+  @media screen and (min-width: 768px) {
+    /* background-image: url(../images/main-bg/bg-body-tablet.png); */
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100vw 3000px;
+  }
+  @media screen and (min-width: 1280px) {
+    /* background-image: url(../images/main-bg/bg-body-deckstop.png); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100vw 3000px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  }
 }
 
 code {

@@ -9,11 +9,12 @@ const TrendComponend = () => {
   useEffect(() => {
     faechApiTrending().then(setGetApi);
   }, []);
-  console.log(getApi);
+
   const { results } = getApi;
   console.log(results);
   return (
     <Container>
+      {/* <div id={6969}></div>  УДОЛИТЬ потом */}
       <ListCard>
         {results &&
           results.map(value => (

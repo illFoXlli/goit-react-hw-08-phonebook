@@ -7,8 +7,8 @@ const Layout = () => {
   return (
     <Box>
       <AppBar />
-      <Outlet />
-      <TrendComponend />
+      {<Outlet /> ? <TrendComponend /> : <Outlet />}
+      {console.log(<Outlet />)}
     </Box>
   );
 };

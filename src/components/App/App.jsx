@@ -1,5 +1,6 @@
 import Layout from 'components/Layout';
 import { Routes, Route } from 'react-router-dom';
+import { ErrorPage } from './App.styled';
 
 export const App = () => {
   return (
@@ -10,7 +11,10 @@ export const App = () => {
             {/* <Route path="get-trending" element={'get-trending'}></Route> */}
           </Route>
         </Route>
-        <Route path="*" element={'Не такой станицы'}></Route>
+        <Route
+          path="*"
+          element={<ErrorPage>Такой станицы нету!</ErrorPage>}
+        ></Route>
       </Routes>
     </>
   );
