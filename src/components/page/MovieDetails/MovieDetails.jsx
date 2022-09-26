@@ -4,7 +4,7 @@ import { faechApiMovieId } from '../../service/faechAPI';
 // import PropTypes from 'prop-types';
 import Box from '../../service/Box';
 import { Img, DivCard } from './MovieDetails.styled';
-import Container from '../../service/Container/';
+import Container from '../../service/Container';
 
 const MovieDetails = () => {
   const { movieId } = useParams();

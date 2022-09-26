@@ -48,9 +48,9 @@ export const LinkItemNav = styled(NavLink)`
     color: #eaf818;
   }
 
-  /* :focus-visible:not(.active),
+  :focus-visible:not(.active),
   :hover:not(.active) {
     color: #eaf818;
     transform: scale(1.05);
-  } */
+  }
 `;

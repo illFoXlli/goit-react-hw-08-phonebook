@@ -5,22 +5,21 @@ import { ErrorPage } from './App.styled';
 import Muvies from '../page/Movies';
 import TrendComponend from '../page/TrendComponend';
 import MovieDetails from 'components/page/MovieDetails';
-import CastMovie from '../../components/page/CastMovie';
-import ReviewsMovie from '../../components/page/ReviewsMovie';
+import CastMovie from '../page/CastMovie';
+import ReviewsMovie from '../page/ReviewsMovie';
 
 export const App = () => {
   // const [idMuvies, setIdMuvies] = useState(null);
 
   return (
     <>
+      <Layout />
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<TrendComponend />} />
-          <Route path="/movies" element={<Muvies />} />
-          <Route path={'/movies/:movieId'} element={<MovieDetails />}>
-            <Route path="/movies/:movieId/reviews" element={<ReviewsMovie />} />
-            <Route path="/movies/:movieId/cast" element={<CastMovie />} />
-          </Route>
+        <Route index element={<TrendComponend />} />
+        <Route path="/movies" element={<Muvies />} />
+        <Route path={'/movies/:movieId'} element={<MovieDetails />}>
+          <Route path="/movies/:movieId/reviews" element={<ReviewsMovie />} />
+          <Route path="/movies/:movieId/cast" element={<CastMovie />} />
         </Route>
         <Route path="*" element={<ErrorPage>Такой станицы нету!</ErrorPage>} />
       </Routes>
