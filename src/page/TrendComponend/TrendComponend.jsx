@@ -29,7 +29,7 @@ const TrendComponend = () => {
   if (data === null) {
     return !loaderTaggel && <Loader />;
   }
-  const { total_pages, page } = data;
+  const { total_pages } = data;
   return (
     <Container>
       <ListCard>

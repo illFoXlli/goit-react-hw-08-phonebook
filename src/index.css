@@ -34,9 +34,9 @@ img {
   overflow: hidden;
 }
 body {
-  background-color: var(--black-bg-color);
-  color: var(--pink-text-color);
-  font-family: var(--primary-text-font);
+  background-color: #0e0e0e;
+  color: #0e0e0e;
+  font-family: 'Montserrat', 'sans-serif';
   background: #2980b9; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,

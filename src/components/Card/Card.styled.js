@@ -44,14 +44,22 @@ export const Img = styled.img`
   }
 `;
 export const Title = styled.h2`
+  color: #eaf818;
+  text-shadow: 1px 1px 2px black;
+
   width: 130px;
   font-weight: 700;
   font-size: 12px;
   line-height: calc(17.07 / 14);
   margin-right: auto;
   margin-left: auto;
-  min-height: 35px;
-  text-shadow: 1px 0 1px rgb(241, 109, 183);
+  /* min-height: 35px; */
+
+  :focus-visible:not(.active),
+  :hover:not(.active) {
+    color: rgb(255, 151, 0);
+    transform: scale(1.05);
+  }
 
   @media screen and (min-width: 768px) {
     width: 152px;

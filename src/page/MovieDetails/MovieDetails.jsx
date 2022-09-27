@@ -1,10 +1,4 @@
-import {
-  useParams,
-  NavLink,
-  Outlet,
-  Link,
-  useLocation,
-} from 'react-router-dom';
+import { useParams, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { faechApiMovieId } from '../../components/service/faechAPI';
 // import PropTypes from 'prop-types';

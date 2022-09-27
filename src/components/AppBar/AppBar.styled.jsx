@@ -24,7 +24,8 @@ export const NavStyled = styled.nav`
 export const LinkItemNav = styled(NavLink)`
   display: inline-flex;
   align-items: center;
-  color: rgb(255, 151, 0);
+
+  color: #eaf818;
   text-shadow: 1px 1px 2px black;
 
   /* font-size: 72px;
@@ -45,12 +46,18 @@ export const LinkItemNav = styled(NavLink)`
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   &.active {
-    color: #eaf818;
+    color: rgb(255, 151, 0);
   }
 
   :focus-visible:not(.active),
   :hover:not(.active) {
-    color: #eaf818;
+    color: rgb(255, 151, 0);
     transform: scale(1.05);
   }
+`;
+export const Wrapper = styled.div`
+  color: tomato;
+
+  margin-right: 30px;
+  margin-top: 15px;
 `;

@@ -1,4 +1,11 @@
-import { Container, Logo, NavStyled, HeaderStyled, LinkItemNav } from './index';
+import {
+  Container,
+  Logo,
+  NavStyled,
+  HeaderStyled,
+  LinkItemNav,
+  Wrapper,
+} from './index';
 import { Link } from 'react-router-dom';
 
 const navItems = [
@@ -18,9 +25,11 @@ const AppBar = () => {
               </LinkItemNav>
             ))}
           </NavStyled>
-          <Link to={'/'}>
-            <Logo />
-          </Link>
+          <Wrapper>
+            <Link to={'/'}>
+              <Logo />
+            </Link>
+          </Wrapper>
         </HeaderStyled>
       </Container>
     </>
