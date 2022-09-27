@@ -10,19 +10,18 @@ const Card = ({ item }) => {
     ? `https://image.tmdb.org/t/p/w500${poster_path}`
     : imgNotFound;
 
+  console.log();
   return (
     <ListCard>
       <li>
-        <Img
-          alt="A lazy image"
-          src={`https://image.tmdb.org/t/p/w300${imgUrl}`}
-        />
+        <Img alt="A lazy image" src={`${imgUrl}`} />
       </li>
       <Box as="li" mt="4px">
         <Title>{item.title}</Title>
       </Box>
       <Box as="li" mt="4px">
-        <Span>Release date:</Span>
+        <Span>Rating:</Span>
+        <span>{item.vote_average.toFixed(1)}</span>
       </Box>
       <Box as="li" mt="4px">
         <Span>{item.release_date}</Span>

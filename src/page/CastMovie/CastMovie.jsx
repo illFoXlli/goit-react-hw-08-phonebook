@@ -1,9 +1,9 @@
-import { faechApiMovieCredits } from '../../service/faechAPI';
+import { faechApiMovieCredits } from '../../components/service/faechAPI';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { ListCard } from './CastMovie.styled';
 import { Container } from 'components/AppBar';
-import CardCast from '../../CardCast/CardCast';
+import CardCast from '../../components/CardCast/CardCast';
 
 const CastMovie = () => {
   const { movieId } = useParams();

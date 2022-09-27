@@ -1,4 +1,4 @@
-import { default as Container } from '../service/Container';
+import { default as Container } from '../Container';
 import { default as Logo } from '../Logo';
 import { default as AppBar } from './AppBar';
 

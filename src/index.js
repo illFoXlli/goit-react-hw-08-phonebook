@@ -3,11 +3,14 @@ import { BrowserRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import { App } from 'components/App';
 import './index.css';
+import { StyledEngineProvider } from '@mui/material/styles';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <StyledEngineProvider injectFirst>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </StyledEngineProvider>
   </React.StrictMode>
 );

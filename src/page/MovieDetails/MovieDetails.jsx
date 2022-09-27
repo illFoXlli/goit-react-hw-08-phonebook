@@ -1,19 +1,32 @@
-import { useParams, NavLink, Outlet, Link } from 'react-router-dom';
+import {
+  useParams,
+  NavLink,
+  Outlet,
+  Link,
+  useLocation,
+} from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { faechApiMovieId } from '../../service/faechAPI';
+import { faechApiMovieId } from '../../components/service/faechAPI';
 // import PropTypes from 'prop-types';
-import Box from '../../service/Box';
+import Box from '../../components/service/Box';
 import { Img, DivCard } from './MovieDetails.styled';
-import Container from '../../service/Container';
+import Container from '../../components/Container';
+import Loader from 'components/Loader';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
-  const [getApi, setGetApi] = useState(null);
+  const [data, setData] = useState(null);
+  const [loaderTaggel, setLoaderTaggel] = useState(false);
+  const location = useLocation();
+
   useEffect(() => {
-    faechApiMovieId(movieId).then(setGetApi);
+    faechApiMovieId(movieId)
+      .then(setData)
+      .finally(() => setLoaderTaggel(false));
   }, [movieId]);
-  if (getApi === null) {
-    return;
+
+  if (data === null) {
+    return !loaderTaggel && <Loader />;
   }
   const {
     title,
@@ -24,9 +37,9 @@ const MovieDetails = () => {
     first_air_date,
     poster_path,
     vote_average,
-  } = getApi;
+  } = data;
 
-  const userScore = Math.round(vote_average * 10);
+  const userScore = vote_average.toFixed(1) * 10;
 
   const imgNotFound =
     'https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png';
@@ -34,10 +47,13 @@ const MovieDetails = () => {
   const imgUrl = poster_path
     ? `https://image.tmdb.org/t/p/w500${poster_path}`
     : imgNotFound;
+  console.log('+++++++++++++++++++');
+  console.log(location);
+  const goBack = location.state?.from ?? '/';
 
   return (
     <Container>
-      <NavLink to={'/'}>Go back</NavLink>
+      <NavLink to={goBack}>Go back</NavLink>
       <DivCard>
         <Img src={imgUrl} alt={title || name} width="200" />
         <div>
@@ -65,19 +81,18 @@ const MovieDetails = () => {
             Genres
           </Box>
           <p>{genres.map(({ name }) => name).join(', ')}</p>
+          <h1>Additional information</h1>
+          <Box as="ul" display="flex">
+            <li>
+              <NavLink to={`/movies/${movieId}/cast`}>Cast</NavLink>
+            </li>
+            <li>
+              <NavLink to={`/movies/${movieId}/reviews`}>Reviews</NavLink>
+            </li>
+          </Box>
         </div>
       </DivCard>
-      <div>
-        <ul>
-          <li>
-            <NavLink to={`/movies/${movieId}/cast`}>Cast</NavLink>
-          </li>
-          <li>
-            <Link to={`/movies/${movieId}/reviews`}>Reviews</Link>
-          </li>
-        </ul>
-        <Outlet />
-      </div>
+      <Outlet />
     </Container>
   );
 };

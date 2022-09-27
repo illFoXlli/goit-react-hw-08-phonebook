@@ -3,8 +3,6 @@ import Box from '../service/Box';
 
 const CardCast = ({ item }) => {
   const { profile_path } = item;
-  console.log('+++++++++++++++++++');
-  console.log(profile_path);
   const imgNotFound =
     'https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png';
 
@@ -15,10 +13,7 @@ const CardCast = ({ item }) => {
   return (
     <ListCard>
       <li>
-        <Img
-          alt="A lazy image"
-          src={`https://image.tmdb.org/t/p/w500${imgUrl}`}
-        />
+        <Img alt="A lazy image" src={imgUrl} />
       </li>
       <Box as="li">
         <Box
