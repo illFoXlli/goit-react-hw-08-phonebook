@@ -1,25 +1,19 @@
 import Container from 'components/Container';
-import {
-  SearchForm,
-  Input,
-  Button,
-  Wrapper,
-  ListCard,
-  PaginationNew,
-} from './Muvies.styled';
-import { FcSearch } from 'react-icons/fc';
+import { ListCard, PaginationNew } from './Muvies.styled';
 import { faechApiMovie } from '../../components/service/faechAPI';
 import { useLocation, Link, useSearchParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Card from 'components/Card';
 import Pagination from '@mui/material/Pagination';
-// import Loader from 'components/Loader';
+import Search from '../../components/Search';
+import Loader from 'components/Loader';
 
 const Movie = () => {
   const [valueInput, setValueInput] = useState('');
   const [data, setData] = useState({});
   const [search, setSearch] = useSearchParams();
   const [loaderTaggel, setLoaderTaggel] = useState(false);
+
   const location = useLocation();
 
   const page = search.get('page');
@@ -30,17 +24,20 @@ const Movie = () => {
     setSearch({ page: pageNew, search: valueInput });
   };
 
-  const handleSubmit = e => {
-    e.preventDefault();
+  const handleSubmit = value => {
+    setValueInput(value);
+  };
+
+  useEffect(() => {
+    if (valueInput === '') {
+      return;
+    }
     faechApiMovie(valueInput, Number(pageNew))
       .then(setData)
       .catch(error => console.log(error));
     setSearch({ page: pageNew, search: valueInput });
-  };
-
-  const handleChange = e => {
-    return setValueInput(e.target.value);
-  };
+    // eslint-disable-next-line
+  }, [valueInput, pageNew]);
 
   useEffect(() => {
     if (valueInput === '') {
@@ -55,10 +52,12 @@ const Movie = () => {
     faechApiMovie(valueInput, Number(pageNew))
       .then(setData)
       .finally(() => setLoaderTaggel(false));
+    // eslint-disable-next-line
   }, [pageNew, valueSearch]);
 
   useEffect(() => {
     if (page && valueSearch) {
+      setValueInput(valueSearch);
       faechApiMovie(valueSearch, Number(page))
         .then(setData)
         .finally(() => setLoaderTaggel(false));
@@ -66,28 +65,11 @@ const Movie = () => {
   }, []);
 
   if (data === null) {
-    return;
+    return !loaderTaggel && <Loader />;
   }
   return (
     <>
-      <Container>
-        <Wrapper>
-          <SearchForm onSubmit={handleSubmit}>
-            <Input
-              onChange={handleChange}
-              type="text"
-              autoComplete="off"
-              autoFocus
-              placeholder="Search movies"
-              value={valueInput}
-            />
-            <Button type="submit">
-              <FcSearch />
-            </Button>
-          </SearchForm>
-        </Wrapper>
-      </Container>
-
+      <Search handleSubmit={handleSubmit} />
       {data?.results?.length > 0 && (
         <Container>
           <ListCard>

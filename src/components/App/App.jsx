@@ -9,8 +9,6 @@ import CastMovie from '../../page/CastMovie';
 import ReviewsMovie from '../../page/ReviewsMovie/';
 
 export const App = () => {
-  // const [idMuvies, setIdMuvies] = useState(null);
-
   return (
     <>
       <Routes>
@@ -30,9 +28,3 @@ export const App = () => {
     </>
   );
 };
-
-// '/' - компонент Home, домашняя страница со списком популярных кинофильмов.
-// '/' - компонент Movies, страница поиска фильмов по ключевому слову.
-// '/movies/:movieId' - компонент MovieDetails, страница с детальной информацией о кинофильме.
-// /movies/:movieId/cast - компонент Cast, информация о актерском составе. Рендерится на странице MovieDetails.
-// /movies/:movieId/reviews

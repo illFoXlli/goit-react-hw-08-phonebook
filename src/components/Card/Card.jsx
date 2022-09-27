@@ -29,10 +29,6 @@ const Card = ({ item }) => {
         display="flex"
         justify-content="spaceBetween"
       />
-
-      {/* <Box as="li" mt="4px">
-        <Span>{item.release_date}</Span>
-      </Box> */}
     </>
   );
 };

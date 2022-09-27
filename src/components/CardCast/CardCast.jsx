@@ -25,9 +25,7 @@ const CardCast = ({ item }) => {
           <Title>{item.name}</Title>
         </Box>
       </Box>
-      {/* <Box as="li" mt="4px">
-        <Span>Character:</Span>
-      </Box> */}
+
       <Box as="li" mt="4px">
         <SpanCharacter>{item.character}</SpanCharacter>
       </Box>

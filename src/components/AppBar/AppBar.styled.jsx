@@ -28,11 +28,6 @@ export const LinkItemNav = styled(NavLink)`
   color: #eaf818;
   text-shadow: 1px 1px 2px black;
 
-  /* font-size: 72px;
-  background: -webkit-linear-gradient(#eee, #333);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
-
   padding-top: 20px;
   padding-bottom: 50px;
 
