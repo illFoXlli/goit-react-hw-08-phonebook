@@ -1,6 +1,5 @@
-import { ListCard, Img, Title, Span } from './Card.styled';
+import { ListCard, Img, Title, Span, RatingNew } from './Card.styled';
 import Box from '../service/Box';
-import Rating from '@mui/material/Rating';
 
 const Card = ({ item }) => {
   const { poster_path } = item;
@@ -13,30 +12,28 @@ const Card = ({ item }) => {
 
   console.log();
   return (
-    <ListCard>
-      <li>
-        <Img alt="A lazy image" src={`${imgUrl}`} />
-      </li>
-      <Box as="li" mt="4px">
-        <Title>{item.title}</Title>
-      </Box>
-      <Box as="li" mt="4px">
-        <Span>Rating:</Span>
-        <span>{item.vote_average.toFixed(1)}</span>
-        <Rating
-          name="simple-controlled"
-          value={item.vote_average.toFixed(1) / 2}
-          readOnly
-          // onChange={(event, newValue) => {
-          //   setValue(newValue);
-          // }
-          // }
-        />
-      </Box>
+    <>
+      <Img alt="A lazy image" src={`${imgUrl}`} />
+
+      <Title>{item.title}</Title>
+
+      <Span>
+        Rating:
+        {item.vote_average.toFixed(1) > 0 ? item.vote_average.toFixed(1) : 0}
+      </Span>
+
+      <RatingNew
+        name="simple-controlled"
+        value={item.vote_average.toFixed(1) / 2}
+        readOnly
+        display="flex"
+        justify-content="spaceBetween"
+      />
+
       {/* <Box as="li" mt="4px">
         <Span>{item.release_date}</Span>
       </Box> */}
-    </ListCard>
+    </>
   );
 };
 

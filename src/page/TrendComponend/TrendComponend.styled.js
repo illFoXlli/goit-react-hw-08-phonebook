@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const ListCard = styled.ul`
   display: flex;
@@ -14,4 +15,17 @@ export const ListCard = styled.ul`
     column-gap: 20px;
     row-gap: 10px;
   }
+`;
+
+export const ListItem = styled.li`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+`;
+
+export const PaginationNew = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
 `;

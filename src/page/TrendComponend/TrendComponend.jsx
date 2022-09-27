@@ -3,20 +3,24 @@ import { useEffect, useState } from 'react';
 import { faechApiTrending } from '../../components/service/faechAPI';
 import Container from '../../components/Container';
 import Card from 'components/Card';
-import { ListCard } from './TrendComponend.styled';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { ListCard, ListItem, PaginationNew } from './TrendComponend.styled';
+import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import Pagination from '@mui/material/Pagination';
+
 import Loader from 'components/Loader';
 
 const TrendComponend = () => {
   const [data, setData] = useState(null);
   const [loaderTaggel, setLoaderTaggel] = useState(false);
-  const navigate = useNavigate();
+  const [search, setSearch] = useSearchParams();
+
   const location = useLocation();
 
-  const pageNew = new URLSearchParams(location.search).get('page') ?? 1;
+  const query = search.get('page');
+  const pageNew = query ?? 1;
+
   const onHandlePage = (_, pageNew) => {
-    navigate({ ...location, search: `page=${pageNew}` });
+    setSearch({ page: pageNew });
   };
 
   useEffect(() => {
@@ -25,7 +29,7 @@ const TrendComponend = () => {
       .then(setData)
       .finally(() => setLoaderTaggel(false));
   }, [pageNew]);
-  console.log(data);
+
   if (data === null) {
     return !loaderTaggel && <Loader />;
   }
@@ -34,20 +38,22 @@ const TrendComponend = () => {
     <Container>
       <ListCard>
         {data?.results.map(value => (
-          <li key={value.id}>
+          <ListItem key={value.id}>
             <Link to={`/movies/${value.id}`} state={{ from: location }}>
               <Card item={value} />
             </Link>
-          </li>
+          </ListItem>
         ))}
       </ListCard>
-      <Pagination
-        count={total_pages}
-        page={Number(pageNew)}
-        onChange={onHandlePage}
-        showFirstButton
-        showLastButton
-      />
+      <PaginationNew>
+        <Pagination
+          count={total_pages}
+          page={Number(pageNew)}
+          onChange={onHandlePage}
+          showFirstButton
+          showLastButton
+        />
+      </PaginationNew>
     </Container>
   );
 };

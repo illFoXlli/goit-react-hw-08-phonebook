@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Rating from '@mui/material/Rating';
 
 export const ListCard = styled.ul`
   margin-left: auto;
@@ -46,7 +47,7 @@ export const Img = styled.img`
 export const Title = styled.h2`
   color: #eaf818;
   text-shadow: 1px 1px 2px black;
-
+  text-align: center;
   width: 130px;
   font-weight: 700;
   font-size: 12px;
@@ -73,12 +74,13 @@ export const Title = styled.h2`
     min-height: auto;
   }
 `;
-export const Span = styled.span`
+export const Span = styled.p`
   margin-right: auto;
   margin-left: auto;
-  color: var(--primary-white-text-color);
+  color: hsl(0, 7%, 5%);
   font-size: 14px;
   line-height: calc(17.07 / 14);
+  text-align: center;
 
   @media screen and (min-width: 768px) {
     font-size: 16px;
@@ -88,4 +90,8 @@ export const Span = styled.span`
   @media screen and (min-width: 1280px) {
     width: 288px;
   }
+`;
+export const RatingNew = styled(Rating)`
+  display: flex;
+  justify-content: space-between;
 `;

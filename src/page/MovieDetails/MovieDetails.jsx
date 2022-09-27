@@ -3,9 +3,10 @@ import { useState, useEffect } from 'react';
 import { faechApiMovieId } from '../../components/service/faechAPI';
 // import PropTypes from 'prop-types';
 import Box from '../../components/service/Box';
-import { Img, DivCard } from './MovieDetails.styled';
+import { Img, DivCard, Wrapper, Tital } from './MovieDetails.styled';
 import Container from '../../components/Container';
 import Loader from 'components/Loader';
+import { TbArrowBackUp } from 'react-icons/tb';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -41,13 +42,16 @@ const MovieDetails = () => {
   const imgUrl = poster_path
     ? `https://image.tmdb.org/t/p/w500${poster_path}`
     : imgNotFound;
-  console.log('+++++++++++++++++++');
-  console.log(location);
+
   const goBack = location.state?.from ?? '/';
 
   return (
     <Container>
-      <NavLink to={goBack}>Go back</NavLink>
+      <Wrapper>
+        <NavLink to={goBack}>
+          <TbArrowBackUp color="tomato" size="50px" />
+        </NavLink>
+      </Wrapper>
       <DivCard>
         <Img src={imgUrl} alt={title || name} width="200" />
         <div>
@@ -75,7 +79,7 @@ const MovieDetails = () => {
             Genres
           </Box>
           <p>{genres.map(({ name }) => name).join(', ')}</p>
-          <h1>Additional information</h1>
+          <Tital>Additional information</Tital>
           <Box as="ul" display="flex">
             <li>
               <NavLink to={`/movies/${movieId}/cast`}>Cast</NavLink>

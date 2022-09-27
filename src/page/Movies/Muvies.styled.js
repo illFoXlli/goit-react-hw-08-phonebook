@@ -82,3 +82,8 @@ export const ListCard = styled.ul`
     row-gap: 10px;
   }
 `;
+export const PaginationNew = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+`;
