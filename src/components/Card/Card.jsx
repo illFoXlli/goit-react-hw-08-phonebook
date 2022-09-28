@@ -1,4 +1,5 @@
 import { Img, Title, Span, RatingNew } from './Card.styled';
+import PropTypes from 'prop-types';
 
 const Card = ({ item }) => {
   const { poster_path } = item;
@@ -32,6 +33,10 @@ const Card = ({ item }) => {
       </div>
     </>
   );
+};
+
+Card.propTypes = {
+  profile_path: PropTypes.string,
 };
 
 export default Card;
