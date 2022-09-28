@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useLocation, Link, useSearchParams } from 'react-router-dom';
 import Container from 'components/Container';
-import { ListCard, PaginationNew } from './Muvies.styled';
+import { ListCard, PaginationNew } from './MuviesPage.styled';
 import { faechApiMovie } from '../../components/service/faechAPI';
 import Card from 'components/Card';
 import Pagination from '@mui/material/Pagination';

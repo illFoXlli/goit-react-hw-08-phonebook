@@ -1,13 +1,13 @@
 import { lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import TrendComponend from '../../page/TrendComponendPage/TrendComponend';
+import TrendComponend from '../../page/TrendComponendPage/TrendComponendPage';
 import Layout from 'components/Layout/';
 
-const Movies = lazy(() => import('../../page/Movies'));
-const MovieDetails = lazy(() => import('../../page/MovieDetails'));
-const CastMovie = lazy(() => import('../../page/CastMovie'));
-const ReviewsMovie = lazy(() => import('../../page/ReviewsMovie/'));
-const Error = lazy(() => import('../../page/Error'));
+const Movies = lazy(() => import('../../page/MoviesPage'));
+const MovieDetails = lazy(() => import('../../page/MovieDetailsPage'));
+const CastMovie = lazy(() => import('../../page/CastMoviePage'));
+const ReviewsMovie = lazy(() => import('../../page/ReviewsMoviePage'));
+const Error = lazy(() => import('../../page/ErrorPage'));
 
 export const App = () => {
   return (

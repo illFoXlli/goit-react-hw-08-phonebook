@@ -2,9 +2,21 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const Img = styled.img`
-  width: 250px;
-  margin-right: 50px;
+  width: 180px;
+  margin-right: 20px;
   margin-bottom: auto;
+  @media screen and (min-width: 320px) {
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 180px;
+    margin-right: 20px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 250px;
+    margin-right: 50px;
+  }
 `;
 export const DivCard = styled.div`
   display: flex;
@@ -25,10 +37,21 @@ export const Tital = styled.h2`
 `;
 
 export const ItemOne = styled.li`
-  margin-left: 50px;
-  font-size: 24px;
   font-family: cursive;
-  font-weight: 800;
+  font-weight: 600;
+  font-size: 12px;
+  @media screen and (min-width: 320px) {
+  }
+
+  @media screen and (min-width: 768px) {
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-weight: 800;
+    font-size: 24px;
+  }
 `;
 
 export const LinkStyle = styled(NavLink)`
@@ -41,5 +64,14 @@ export const LinkStyle = styled(NavLink)`
   :hover:not(.active) {
     color: rgb(255, 151, 0);
     transform: scale(1.05);
+  }
+`;
+
+export const ListLink = styled.ul`
+  display: flex;
+  justify-content: space-around;
+  @media screen and (min-width: 1280px) {
+    justify-content: flex-start;
+    gap: 50px;
   }
 `;

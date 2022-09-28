@@ -10,7 +10,8 @@ import {
   Tital,
   LinkStyle,
   ItemOne,
-} from './MovieDetails.styled';
+  ListLink,
+} from './MovieDetailsPage.styled';
 import Container from '../../components/Container';
 import Loader from 'components/Loader';
 import { TbArrowBackUp } from 'react-icons/tb';
@@ -24,6 +25,7 @@ const MovieDetails = () => {
   useEffect(() => {
     faechApiMovieId(movieId)
       .then(setData)
+      .catch(error => console.log(error))
       .finally(() => setLoaderTaggel(false));
   }, [movieId]);
 
@@ -76,16 +78,14 @@ const MovieDetails = () => {
           <Box as="h3" mb="10px">
             Overview
           </Box>
-          <Box width="40vw" mb="10px">
-            {overview}
-          </Box>
+          <Box mb="10px">{overview}</Box>
 
           <Box as="h3" mb="10px">
             Genres
           </Box>
           <p>{genres.map(({ name }) => name).join(', ')}</p>
           <Tital>Additional information</Tital>
-          <Box as="ul" display="flex">
+          <ListLink>
             <ItemOne>
               <LinkStyle
                 to={`/movies/${movieId}/cast`}
@@ -102,7 +102,7 @@ const MovieDetails = () => {
                 Reviews
               </LinkStyle>
             </ItemOne>
-          </Box>
+          </ListLink>
         </div>
       </DivCard>
       <Outlet />

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { faechApiMovieCredits } from '../../components/service/faechAPI';
-import { ListCard } from './CastMovie.styled';
+import { ListCard } from './CastMoviePage.styled';
 import { Container } from 'components/AppBar';
 import CardCast from '../../components/CardCast/CardCast';
 
@@ -9,7 +9,9 @@ const CastMovie = () => {
   const { movieId } = useParams();
   const [getApi, setGetApi] = useState(null);
   useEffect(() => {
-    faechApiMovieCredits(movieId).then(setGetApi);
+    faechApiMovieCredits(movieId)
+      .then(setGetApi)
+      .catch(error => console.log(error));
   }, [movieId]);
   if (getApi === null) {
     return;

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { faechApiTrending } from '../../components/service/faechAPI';
 import Container from '../../components/Container';
 import Card from 'components/Card';
-import { ListCard, ListItem, PaginationNew } from './TrendComponend.styled';
+import { ListCard, ListItem, PaginationNew } from './TrendComponendPage.styled';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import Pagination from '@mui/material/Pagination';
 import Loader from 'components/Loader';
@@ -26,6 +26,7 @@ const TrendComponend = () => {
     setLoaderTaggel(true);
     faechApiTrending(Number(pageNew))
       .then(setData)
+      .catch(error => console.log(error))
       .finally(() => setLoaderTaggel(false));
   }, [pageNew]);
 

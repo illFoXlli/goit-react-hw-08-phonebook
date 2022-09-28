@@ -1,1 +1,1 @@
-export { default } from './TrendComponend';
+export { default } from './TrendComponendPage';
