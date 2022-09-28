@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Container,
   Logo,
@@ -6,7 +7,6 @@ import {
   LinkItemNav,
   Wrapper,
 } from './index';
-import { Link } from 'react-router-dom';
 
 const navItems = [
   { href: '/', text: 'Home', icon: null },

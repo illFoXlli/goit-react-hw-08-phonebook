@@ -1,9 +1,16 @@
-import { useParams, NavLink, Outlet, useLocation } from 'react-router-dom';
+import { useParams, Outlet, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { faechApiMovieId } from '../../components/service/faechAPI';
-// import PropTypes from 'prop-types';
+
 import Box from '../../components/service/Box';
-import { Img, DivCard, Wrapper, Tital } from './MovieDetails.styled';
+import {
+  Img,
+  DivCard,
+  Wrapper,
+  Tital,
+  LinkStyle,
+  ItemOne,
+} from './MovieDetails.styled';
 import Container from '../../components/Container';
 import Loader from 'components/Loader';
 import { TbArrowBackUp } from 'react-icons/tb';
@@ -43,14 +50,12 @@ const MovieDetails = () => {
     ? `https://image.tmdb.org/t/p/w500${poster_path}`
     : imgNotFound;
 
-  const goBack = location.state?.from ?? '/';
-
   return (
     <Container>
       <Wrapper>
-        <NavLink to={goBack}>
+        <LinkStyle to={location.state?.from || '/'}>
           <TbArrowBackUp color="tomato" size="50px" />
-        </NavLink>
+        </LinkStyle>
       </Wrapper>
       <DivCard>
         <Img src={imgUrl} alt={title || name} width="200" />
@@ -81,12 +86,22 @@ const MovieDetails = () => {
           <p>{genres.map(({ name }) => name).join(', ')}</p>
           <Tital>Additional information</Tital>
           <Box as="ul" display="flex">
-            <li>
-              <NavLink to={`/movies/${movieId}/cast`}>Cast</NavLink>
-            </li>
-            <li>
-              <NavLink to={`/movies/${movieId}/reviews`}>Reviews</NavLink>
-            </li>
+            <ItemOne>
+              <LinkStyle
+                to={`/movies/${movieId}/cast`}
+                state={{ from: location.state?.from || '/' }}
+              >
+                Cast
+              </LinkStyle>
+            </ItemOne>
+            <ItemOne>
+              <LinkStyle
+                to={`/movies/${movieId}/reviews`}
+                state={{ from: location.state?.from || '/' }}
+              >
+                Reviews
+              </LinkStyle>
+            </ItemOne>
           </Box>
         </div>
       </DivCard>
@@ -94,20 +109,5 @@ const MovieDetails = () => {
     </Container>
   );
 };
-
-// MovieDetails.propTypes = {
-//   movie: PropTypes.shape({
-//     title: PropTypes.string,
-//     name: PropTypes.string,
-//     overview: PropTypes.string.isRequired,
-//     genres: PropTypes.arrayOf(
-//       PropTypes.shape({ name: PropTypes.string.isRequired })
-//     ),
-//     release_date: PropTypes.string.isRequired,
-//     first_air_date: PropTypes.string,
-//     poster_path: PropTypes.string,
-//     vote_average: PropTypes.number.isRequired,
-//   }).isRequired,
-// };
 
 export default MovieDetails;

@@ -1,6 +1,6 @@
-import { faechApiMovieCredits } from '../../components/service/faechAPI';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { faechApiMovieCredits } from '../../components/service/faechAPI';
 import { ListCard } from './CastMovie.styled';
 import { Container } from 'components/AppBar';
 import CardCast from '../../components/CardCast/CardCast';
@@ -18,7 +18,7 @@ const CastMovie = () => {
   return (
     <Container>
       <ListCard>
-        {cast.map(value => (
+        {cast?.map(value => (
           <li key={value.credit_id}>
             <CardCast item={value} />
           </li>

@@ -1,19 +1,18 @@
+import { useState, useEffect } from 'react';
+import { useLocation, Link, useSearchParams } from 'react-router-dom';
 import Container from 'components/Container';
 import { ListCard, PaginationNew } from './Muvies.styled';
 import { faechApiMovie } from '../../components/service/faechAPI';
-import { useLocation, Link, useSearchParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import Card from 'components/Card';
 import Pagination from '@mui/material/Pagination';
 import Search from '../../components/Search';
 import Loader from 'components/Loader';
 
-const Movie = () => {
+const Movies = () => {
   const [valueInput, setValueInput] = useState('');
   const [data, setData] = useState({});
   const [search, setSearch] = useSearchParams();
   const [loaderTaggel, setLoaderTaggel] = useState(false);
-
   const location = useLocation();
 
   const page = search.get('page');
@@ -32,6 +31,7 @@ const Movie = () => {
     if (valueInput === '') {
       return;
     }
+
     faechApiMovie(valueInput, Number(pageNew))
       .then(setData)
       .catch(error => console.log(error));
@@ -46,9 +46,9 @@ const Movie = () => {
     if (pageNew === 1) {
       return;
     }
+
     setLoaderTaggel(true);
-    console.log(valueSearch);
-    console.log(pageNew);
+
     faechApiMovie(valueInput, Number(pageNew))
       .then(setData)
       .finally(() => setLoaderTaggel(false));
@@ -62,6 +62,7 @@ const Movie = () => {
         .then(setData)
         .finally(() => setLoaderTaggel(false));
     }
+    // eslint-disable-next-line
   }, []);
 
   if (data === null) {
@@ -96,4 +97,4 @@ const Movie = () => {
   );
 };
 
-export default Movie;
+export default Movies;

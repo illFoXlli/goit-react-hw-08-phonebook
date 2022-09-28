@@ -1,5 +1,1 @@
-import styled from 'styled-components';
-
-export const ErrorPage = styled.h1`
-  text-align: center;
-`;
+// import styled from 'styled-components';

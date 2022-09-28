@@ -94,4 +94,7 @@ export const Span = styled.p`
 export const RatingNew = styled(Rating)`
   display: flex;
   justify-content: space-between;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
 `;

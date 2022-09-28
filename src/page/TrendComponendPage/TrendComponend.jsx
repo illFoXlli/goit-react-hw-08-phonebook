@@ -6,7 +6,6 @@ import Card from 'components/Card';
 import { ListCard, ListItem, PaginationNew } from './TrendComponend.styled';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import Pagination from '@mui/material/Pagination';
-
 import Loader from 'components/Loader';
 
 const TrendComponend = () => {

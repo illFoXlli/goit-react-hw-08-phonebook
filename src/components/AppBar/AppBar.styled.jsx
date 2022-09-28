@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
 import img from '../../imag/haeder/6-05.png';
 
 export const HeaderStyled = styled.header`

@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { FcSearch } from 'react-icons/fc';
 import { SearchForm, Input, Button, Wrapper } from './Search.styled';
 import Container from 'components/Container';
-import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const Search = ({ handleSubmit }) => {
   const [query, setQuery] = useState('');
@@ -36,6 +37,10 @@ const Search = ({ handleSubmit }) => {
       </Container>
     </>
   );
+};
+
+Search.propTypes = {
+  handleSubmit: PropTypes.func,
 };
 
 export default Search;

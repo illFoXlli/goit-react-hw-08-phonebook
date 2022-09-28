@@ -1,1 +1,0 @@
-export { ReactPaginate } from './ReactPaginate';
