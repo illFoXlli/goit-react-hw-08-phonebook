@@ -89,6 +89,7 @@ const Movies = () => {
               onChange={onHandlePage}
               showFirstButton
               showLastButton
+              boundaryCount={0}
             />
           </PaginationNew>
         </Container>

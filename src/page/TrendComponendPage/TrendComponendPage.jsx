@@ -52,6 +52,7 @@ const TrendComponend = () => {
           onChange={onHandlePage}
           showFirstButton
           showLastButton
+          boundaryCount={0}
         />
       </PaginationNew>
     </Container>

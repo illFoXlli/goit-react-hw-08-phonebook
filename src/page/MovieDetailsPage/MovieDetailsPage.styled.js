@@ -5,7 +5,6 @@ export const Img = styled.img`
   width: 180px;
   margin-right: 20px;
   margin-bottom: auto;
- 
 
   @media screen and (min-width: 768px) {
     width: 180px;
@@ -38,11 +37,11 @@ export const Tital = styled.h2`
 export const ItemOne = styled.li`
   font-family: cursive;
   font-weight: 600;
-  font-size: 12px;
- 
+  font-size: 16px;
+
   @media screen and (min-width: 768px) {
     font-weight: 600;
-    font-size: 14px;
+    font-size: 18px;
   }
 
   @media screen and (min-width: 1280px) {
@@ -52,10 +51,10 @@ export const ItemOne = styled.li`
 `;
 
 export const LinkStyle = styled(NavLink)`
-  color: grey;
+  color: #6e6161;
   text-decoration-line: revert;
   &.active {
-    color: rgb(255, 151, 0);
+    color: #9e2c2c;
   }
   :focus-visible:not(.active),
   :hover:not(.active) {

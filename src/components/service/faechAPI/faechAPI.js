@@ -1,6 +1,8 @@
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
+// axios.defaults.baseURL = 'https://api.themoviedb.org/3';
+
 export const faechApiTrending = async (page = 1) => {
   const API_KEY = 'e2cf33bcd0ee79f76f1c4fb556b38c1b';
   const url = 'https://api.themoviedb.org/3/trending/movie/day';
