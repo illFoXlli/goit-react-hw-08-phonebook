@@ -5,8 +5,7 @@ export const Img = styled.img`
   width: 180px;
   margin-right: 20px;
   margin-bottom: auto;
-  @media screen and (min-width: 320px) {
-  }
+ 
 
   @media screen and (min-width: 768px) {
     width: 180px;
@@ -40,9 +39,7 @@ export const ItemOne = styled.li`
   font-family: cursive;
   font-weight: 600;
   font-size: 12px;
-  @media screen and (min-width: 320px) {
-  }
-
+ 
   @media screen and (min-width: 768px) {
     font-weight: 600;
     font-size: 14px;
