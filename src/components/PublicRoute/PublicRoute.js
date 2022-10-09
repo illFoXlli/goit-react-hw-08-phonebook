@@ -6,11 +6,11 @@ import { Outlet } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
 
 
-const PrivateRoute = ()=>{
+const PublicRoute = ()=>{
     const isLoggrdIn = useSelector(getIsLoggrdIn)
-return <>{isLoggrdIn? <Outlet /> : <Navigate to="/login" /> }</>
+return <>{isLoggrdIn? <Navigate to="/contacts" /> :<Outlet /> }</>
 
 }
 
-export default PrivateRoute;
+export default PublicRoute;
 

@@ -9,7 +9,7 @@ import { fetchContacts } from '../../redux/contacts/contactsOpiretion';
 
 
 
- const Phonebook = () => {
+ const PhonebookPage = () => {
   const dispatch = useDispatch();
   // const { status, error } = useSelector(state => state.contacts);
 
@@ -43,4 +43,4 @@ import { fetchContacts } from '../../redux/contacts/contactsOpiretion';
     </>
   );
 };
-export default Phonebook
+export default PhonebookPage

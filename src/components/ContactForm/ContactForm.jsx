@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import * as React from 'react';
 import { error } from '../../utils/error';
 import { lowerCaseValue } from '../../utils/utilits';
-import { addContacts, editContacts } from 'redux/contacts/contactsOpiretion';
+import { addContacts, editContacts } from '../../redux/contacts/contactsOpiretion';
 import {
   FormSubmit,
   LabelName,
@@ -35,7 +35,7 @@ const ContactForm = () => {
       return error(` ${name}is already in contacts`);
     }
     if (editContact) {
-      dispatch(editContacts({ name, number, id: editContact.contact.id }));
+      // dispatch(editContacts({ name, number, id: editContact.contact.id }));
       reset();
     } else {
       dispatch(addContacts({ name, number }));

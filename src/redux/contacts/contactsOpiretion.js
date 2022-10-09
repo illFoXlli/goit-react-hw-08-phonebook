@@ -19,22 +19,9 @@ export const fetchContacts = createAsyncThunk(
   }
 );
 
-export const deleteContact = createAsyncThunk(
-  'contacts/deleteContact',
-  async function (id, { rejectWithValue, dispatch }) {
-    try {
-      const data = await deleteContacts(id);
-
-      return data.id;
-    } catch (error) {
-      return rejectWithValue(error.message);
-    }
-  }
-);
-
 export const addContacts = createAsyncThunk(
   'contacts/addContacts',
-  async function (contact, { rejectWithValue, dispatch }) {
+  async function (contact, { rejectWithValue }) {
     try {
       const data = await getAddContacts(contact);
 
@@ -45,15 +32,30 @@ export const addContacts = createAsyncThunk(
   }
 );
 
-export const editContacts = createAsyncThunk(
-  'contacts/editContacts',
-  async function (contact, { rejectWithValue, dispatch }) {
-    try {
-      const data = await getEditContacts(contact);
-      console.log(data);
-      return data;
-    } catch (error) {
-      return rejectWithValue(error.message);
-    }
-  }
-);
+// export const deleteContact = createAsyncThunk(
+//   'contacts/deleteContact',
+//   async function (id, { rejectWithValue, dispatch }) {
+//     try {
+//       const data = await deleteContacts(id);
+
+//       return data.id;
+//     } catch (error) {
+//       return rejectWithValue(error.message);
+//     }
+//   }
+// );
+
+
+
+// export const editContacts = createAsyncThunk(
+//   'contacts/editContacts',
+//   async function (contact, { rejectWithValue, dispatch }) {
+//     try {
+//       const data = await getEditContacts(contact);
+//       console.log(data);
+//       return data;
+//     } catch (error) {
+//       return rejectWithValue(error.message);
+//     }
+//   }
+// );

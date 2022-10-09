@@ -8,12 +8,13 @@ import Loader from 'components/Loader';
 
 const Layout = () => {
   return (
-    <Box>
+    <>
       <AppBar />
       <Suspense fallback={<Loader />}>
+    
         <Outlet />
       </Suspense>
-    </Box>
+    </>
   );
 };
 

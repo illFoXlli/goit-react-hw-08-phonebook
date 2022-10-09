@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
 import { contactsReducer } from './contacts/contactsSlicer';
 import { filterReducer } from './filter/filterSlicer';
+import { authReducer} from "./auth/authSlicer.js"
 // import storage from 'redux-persist/lib/storage';
 // import {
 //   persistStore,
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
 
   contacts: contactsReducer,
   filter: filterReducer,
+  auth: authReducer,
 });
 
 // const persistConfig = {
