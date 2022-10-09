@@ -6,11 +6,14 @@ import {
   HeaderStyled,
   LinkItemNav,
   Wrapper,
+  WrapperHome
 } from './index';
 
+
 const navItems = [
-  { href: '/', text: 'Home', icon: null },
-  { href: 'movies', text: 'Movies', icon: null },
+  { href: 'login', text: 'Log in', icon: null },
+  { href: 'register', text: 'Sign up', icon: null },
+ 
 ];
 
 const AppBar = () => {
@@ -18,6 +21,19 @@ const AppBar = () => {
     <>
       <Container>
         <HeaderStyled>
+        <WrapperHome>
+            <LinkItemNav to={'/'}>
+            Homepage 
+              </LinkItemNav> <Logo />
+              <LinkItemNav to={'/movies'}>
+              Search Movies 
+              </LinkItemNav>
+              </WrapperHome>
+
+
+
+
+          <Wrapper>
           <NavStyled>
             {navItems.map(({ href, text }) => (
               <LinkItemNav to={href} key={href}>
@@ -25,10 +41,7 @@ const AppBar = () => {
               </LinkItemNav>
             ))}
           </NavStyled>
-          <Wrapper>
-            <Link to={'/'}>
-              <Logo />
-            </Link>
+            
           </Wrapper>
         </HeaderStyled>
       </Container>

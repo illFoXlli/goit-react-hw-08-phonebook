@@ -50,9 +50,17 @@ export const LinkItemNav = styled(NavLink)`
     transform: scale(1.05);
   }
 `;
+
 export const Wrapper = styled.div`
   color: tomato;
 
   margin-right: 30px;
   margin-top: 15px;
 `;
+
+export const WrapperHome = styled.div`
+ 
+  margin-left: 30px;
+  margin-top: 15px;
+`;
+
