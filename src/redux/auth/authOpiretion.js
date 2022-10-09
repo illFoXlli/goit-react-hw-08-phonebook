@@ -32,9 +32,9 @@ export const logIn = createAsyncThunk(
 
   export const logOut = createAsyncThunk(
     'auth/logOut',
-    async function (token, { rejectWithValue }) {
+    async function (_, { rejectWithValue }) {
       try {
-        const data = await postLogOut(token);
+        const data = await postLogOut();
         return data;
       } catch (error) {
         return rejectWithValue(error.message);

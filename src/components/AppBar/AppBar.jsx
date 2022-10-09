@@ -15,8 +15,8 @@ import {getIsLoggrdIn} from "../../redux/auth/authSelector"
 
 
 const navItems = [
-  { href: 'register', text: 'Log in', icon: null },
-  { href: 'login', text: 'Sign up', icon: null },
+  { href: 'login', text: 'Log in', icon: null },
+  { href: 'register', text: 'Sign up', icon: null },
  
 ];
 

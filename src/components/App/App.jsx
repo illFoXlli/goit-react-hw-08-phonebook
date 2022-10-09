@@ -18,26 +18,25 @@ const PhonebookPage = lazy(() => import('../../page/PhonebookPage'));
 export const App = () => {
   return (
     <Routes>
-      <Route element={<Layout />}>
-        <Route element={<PublicRoute />}>
-          <Route path=" /" element={<HomePage />} />
-          <Route path=" /" element={<HomePage />} />
-          <Route path="/login" element={<RegisterView />} />
-          <Route path="/register" element={<LoginView />} />
-        </Route>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path="/register" element={<RegisterView />} />
+        <Route path="/login" element={<LoginView />} />
+        {/* <Route element={<PublicRoute />}>
+        </Route> */}
 
-        {/* <Route path="/movies" element={<Movies />} />
+        <Route path="/movies" element={<Movies />} />
         <Route path={'/movies/:movieId'} element={<MovieDetails />}>
           <Route path="/movies/:movieId/reviews" element={<ReviewsMovie />} />
           <Route path="/movies/:movieId/cast" element={<CastMovie />} />
+        </Route>
+
+        {/* <Route element={<PrivateRoute />}>
         </Route> */}
 
-        <Route element={<PrivateRoute />}>
-          <Route path="/contacts" element={<PhonebookPage />}></Route>
-        </Route>
-        <Route element={<PublicRoute />}>
-          <Route path="*" element={<Error />} />
-        </Route>
+        <Route path="/contacts" element={<PhonebookPage />} />
+
+        <Route path="*" element={<Error />} />
       </Route>
     </Routes>
   );
