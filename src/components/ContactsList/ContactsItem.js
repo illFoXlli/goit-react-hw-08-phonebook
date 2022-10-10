@@ -7,7 +7,7 @@ import Stack from '@mui/material/Stack';
 import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 import { useDispatch, useSelector } from 'react-redux';
-// import { deleteContact } from '../../redux/contacts/contactsOpiretion';
+import { deleteContact } from '../../redux/contacts/contactsOpiretion';
 // import { error } from '../utils/error';
 import { BsFillAlarmFill } from 'react-icons/bs';
 import { FiEdit } from 'react-icons/fi';
@@ -19,7 +19,7 @@ const ContactsItemLi = ({ contact: { name, number, id } }) => {
   const toggle = useRef(null);
 
   const onClickDelete = e => {
-    // dispatch(deleteContact(id));
+    dispatch(deleteContact(id));
     toggle.current = id;
   };
 

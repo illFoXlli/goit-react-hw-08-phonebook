@@ -1,8 +1,9 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Btn = styled.button`
-cursor: pointer;
-text-decoration: none;
+    cursor: pointer;
+    text-decoration: none;
     display: inline-block;
     color: white;
     margin-left: 15px;
@@ -30,4 +31,12 @@ text-decoration: none;
   export const Name = styled.span`
      font-size: 13px;
   `
-  
+
+export const LinkStyle = styled(NavLink)`
+ text-decoration: none;
+    font-family: "Lobster",cursive;
+    font-size: 25px;
+    color: #000;
+    align-self: center;
+`
+

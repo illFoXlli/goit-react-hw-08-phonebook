@@ -5,6 +5,11 @@ import Wrapper from '../../components/Wrapper';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchContacts } from '../../redux/contacts/contactsOpiretion';
+import {DivStuleWrraper} from "./PhonebookPage.styled"
+import Container from "../../components/Container"
+
+
+
 
 
 
@@ -14,18 +19,15 @@ import { fetchContacts } from '../../redux/contacts/contactsOpiretion';
   // const { status, error } = useSelector(state => state.contacts);
 
  
-
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
 
   return (
-    <>
-      <div
+    <Container>
+      <DivStuleWrraper
         style={{
-          display: 'flex',
-          gap: '10px',
-          justifyContent: 'center',
+         
         }}
       >
         <Wrapper>
@@ -39,8 +41,8 @@ import { fetchContacts } from '../../redux/contacts/contactsOpiretion';
         <Wrapper>
           <ContactsList />
         </Wrapper>
-      </div>
-    </>
+      </DivStuleWrraper>
+    </Container>
   );
 };
 export default PhonebookPage

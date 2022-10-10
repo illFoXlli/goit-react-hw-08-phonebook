@@ -12,6 +12,7 @@ import {
 } from './ContactForm.styled';
 import { getEditContact, getContacts } from 'redux/contacts/contactSelector';
 
+
 const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
@@ -35,7 +36,7 @@ const ContactForm = () => {
       return error(` ${name}is already in contacts`);
     }
     if (editContact) {
-      // dispatch(editContacts({ name, number, id: editContact.contact.id }));
+      dispatch(editContacts({ name, number, id: editContact.contact.id }));
       reset();
     } else {
       dispatch(addContacts({ name, number }));

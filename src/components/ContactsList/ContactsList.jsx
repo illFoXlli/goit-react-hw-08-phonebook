@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Contacts } from './Contacts.styled';
 import { useSelector } from 'react-redux';
-import { error } from '../../utils/error';
+
 import { lowerCaseValue } from '../../utils/utilits';
 import ContactsItemLi from './ContactsItem';
 import { getContacts } from '../../redux/contacts/contactSelector';
@@ -26,7 +26,7 @@ const ContactsList = () => {
       </Contacts>
     );
   } else {
-    error('List is empty');
+    
     return <h2>List is empty</h2>;
   }
 };

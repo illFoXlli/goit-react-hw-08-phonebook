@@ -59,6 +59,7 @@ const LoginView = () => {
           />
         </Label>
         <Btn type="submit">
+          
           Log in
         </Btn>
       </SubmitForm>

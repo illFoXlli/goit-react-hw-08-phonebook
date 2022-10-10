@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react';
 import { useLocation, Link, useSearchParams } from 'react-router-dom';
 import Container from 'components/Container';
 import { ListCard, PaginationNew } from './MuviesPage.styled';
-import { faechApiMovie } from '../../components/service/faechAPI';
+
 import Card from 'components/Card';
 import Pagination from '@mui/material/Pagination';
 import Search from '../../components/Search';
 import Loader from 'components/Loader';
+import { faechApiMovie } from '../../components/service/faechAPI/faechAPI';
 
 const Movies = () => {
   const [valueInput, setValueInput] = useState('');

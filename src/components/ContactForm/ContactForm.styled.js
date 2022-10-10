@@ -3,14 +3,17 @@ import styled from 'styled-components';
 import Button from '@mui/material/Button';
 
 export const FormSubmit = styled.form`
+margin-top: 80px
+;
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   height: 170px;
   padding: 20px;
-  border: 2px solid rgb(137, 160, 72);
+  border: 2px solid rgb(255, 99, 71);
   box-shadow: 0px 2px 8px 0px rgba(227, 102, 212, 0.2);
-  background-color: pink;
+  background-color:   rgba(167, 90, 49, .4);
+  backdrop-filter: blur(5px);
   border-radius: 10px;
 `;
 
@@ -19,7 +22,7 @@ const LabelForm = styled.label`
   justify-content: space-between;
   width: 250px;
   margin: 10px 0 20px;
-  border: 1px solid rgb(155, 191, 49);
+  border: 1.5px solid rgb(27, 30, 40);
   border-radius: 5px;
   padding: 10px;
   :focus {

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { faechApiMovieCredits } from '../../components/service/faechAPI';
+import { faechApiMovieCredits } from '../../components/service/faechAPI/faechAPI';
 import { ListCard } from './CastMoviePage.styled';
 import { Container } from 'components/AppBar';
 import CardCast from '../../components/CardCast/CardCast';

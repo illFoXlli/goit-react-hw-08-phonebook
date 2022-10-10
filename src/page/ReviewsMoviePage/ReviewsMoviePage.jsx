@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { faechApiMovieReviews } from '../../components/service/faechAPI';
+import { faechApiMovieReviews } from '../../components/service/faechAPI/faechAPI';
 import { Text, Titel, List } from './ReviewsMoviePage.styled';
 
 const ReviewsMovie = () => {

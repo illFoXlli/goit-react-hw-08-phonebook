@@ -1,68 +1,101 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
+const setContactsBaseURL = () => {
+  axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
+};
 
 const token = {
   set(token) {
-   return axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+    axios.defaults.headers.common.Authorization = `Bearer ${token}`;
   },
   unset() {
-    return  axios.defaults.headers.common.Authorization = '';
-  }
-}
-///////////////////////////////////////////////////////////
-export const postRegister = async (credentials) => {
-  const { data } = await axios.post('/users/signup',credentials);
-  console.log(data.token);
-  token.set(data.token)
-  return data;
+    axios.defaults.headers.common.Authorization = '';
+  },
 };
 
-export const postLogIn = async (credentials) => {
-  const { data } = await axios.post('/users/login',credentials);
-  console.log(data.token);
-  console.log(data);
-  token.set(data.token)
-  return data;
+export const postRegister = async credentials => {
+  setContactsBaseURL();
+
+  try {
+    const { data } = await axios.post('/users/signup', credentials);
+    token.set(data.token);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const postLogIn = async credentials => {
+  setContactsBaseURL();
+  try {
+    const { data } = await axios.post('/users/login', credentials);
+    token.set(data.token);
+    return data;
+  } catch (error) {
+    throw error;
+  }
 };
 
 export const postLogOut = async () => {
-  const { data } = await axios.post('/users/logout');
-  token.unset(data.token)
-  return data;
+  setContactsBaseURL();
+  try {
+    const { data } = await axios.post('/users/logout');
+    token.unset(data.token);
+    return data;
+  } catch (error) {
+    throw error;
+  }
 };
+
+export const fetchCurrentUser = async (tokenState) => {
+  setContactsBaseURL();
+  try {
+  axios.defaults.headers.common = {'Authorization': `Bearer ${tokenState}`}
+    const { data } = await axios.get(`/users/current`);
+    token.set(tokenState);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
+
 /////////////////////////////////////////////////////////////
 
-
 export const getContacts = async () => {
-  const { data } = await axios.get(`/contacts`);
-  token.set(data.token)
-  console.log(data);
-  return data;
+  setContactsBaseURL();
+  try {
+    const { data } = await axios.get(`/contacts`);
+    return data;
+  } catch (error) {
+    throw error;
+  }
 };
 
-export const getAddContacts = async (credentials) => {
-  const { data } = await axios.post(`/contacts`, credentials);
-  token.set(data.token)
-  console.log(data);
-  return data;
+export const getAddContacts = async credentials => {
+  setContactsBaseURL();
+  try {
+    const { data } = await axios.post(`/contacts`, credentials);
+    return data;
+  } catch (error) {
+    throw error;
+  }
 };
 
+export const getDeleteContacts = async id => {
+  try {
+    await axios.delete(`/contacts/${id}`);
+  } catch (error) {
+    throw error;
+  }
+};
 
-// export const deleteContacts = async id => {
-//   const { data } = await axios.delete(`/contacts/${id}`);
-//   return data;
-// };
+export const getEditContacts = async contact => {
+  const params = { name: contact.name, number: contact.number };
+  try {
+    const { data } = await axios.patch(`/contacts/${contact.id}`, params);
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
 
-// export const getAddContacts = async contact => {
-//   const { data } = await axios.post(`/contacts`, { ...contact });
-//   console.log(data);
-//   return data;
-// };
-
-// export const getEditContacts = async contact => {
-//   const params = { ...contact };
-//   const { data } = await axios.put(`/contacts/${contact.id}`, params);
-
-//   return data;
-// };

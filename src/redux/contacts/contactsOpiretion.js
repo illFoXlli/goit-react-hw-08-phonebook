@@ -1,17 +1,16 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import {
   getContacts,
-  deleteContacts,
+  getDeleteContacts,
   getAddContacts,
   getEditContacts,
 } from '../../utils/api';
 
 export const fetchContacts = createAsyncThunk(
   'contacts/function',
-  async function (_, { rejectWithValue }) {
+  async function (tokenState, { rejectWithValue }) {
     try {
-      const data = await getContacts();
-
+      const data = await getContacts(tokenState);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -32,30 +31,26 @@ export const addContacts = createAsyncThunk(
   }
 );
 
-// export const deleteContact = createAsyncThunk(
-//   'contacts/deleteContact',
-//   async function (id, { rejectWithValue, dispatch }) {
-//     try {
-//       const data = await deleteContacts(id);
+export const deleteContact = createAsyncThunk(
+  'contacts/deleteContact',
+  async function (id, { rejectWithValue, dispatch }) {
+    try {
+      await getDeleteContacts(id);
+      return id;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
 
-//       return data.id;
-//     } catch (error) {
-//       return rejectWithValue(error.message);
-//     }
-//   }
-// );
-
-
-
-// export const editContacts = createAsyncThunk(
-//   'contacts/editContacts',
-//   async function (contact, { rejectWithValue, dispatch }) {
-//     try {
-//       const data = await getEditContacts(contact);
-//       console.log(data);
-//       return data;
-//     } catch (error) {
-//       return rejectWithValue(error.message);
-//     }
-//   }
-// );
+export const editContacts = createAsyncThunk(
+  'contacts/editContacts',
+  async function (contact, { rejectWithValue, dispatch }) {
+    try {
+      const data = await getEditContacts(contact);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);

@@ -35,7 +35,7 @@ const contactsSlice = createSlice({
       state.status = 'rejected';
       state.error = action.payload;
     },
-    //////////////////////////////////////
+    /////////////////////////////////////////////
     [addContacts.pending]: (state, action) => {
       console.log('это пэндинг');
       state.status = 'loading';
@@ -47,43 +47,44 @@ const contactsSlice = createSlice({
       state.items.unshift(action.payload);
     },
     [addContacts.rejected]: (state, action) => {
-      console.log('=====================');
       state.status = 'rejected';
       state.error = action.payload;
     },
-    // [deleteContact.pending]: (state, action) => {
-    //   state.status = 'loading';
-    //   state.error = null;
-    // },
-    // [deleteContact.fulfilled]: (state, action) => {
-    //   console.log('go');
-    //   state.status = 'resolved';
-    //   state.items = state.items.filter(
-    //     contact => contact.id !== action.payload
-    //   );
-    // },
-    // [deleteContact.rejected]: (state, action) => {
-    //   state.status = 'rejected';
-    //   state.error = action.payload;
-    // },
+    //////////////////////////////////////////////
+    [deleteContact.pending]: (state, action) => {
+      state.status = 'loading';
+      state.error = null;
+    },
+    [deleteContact.fulfilled]: (state, action) => {
+      state.status = 'resolved';
+      state.items = state.items.filter(
+        contact => {  console.log(action);
+          return contact.id !== action.payload
+          }
+        
+      );
+    },
+    [deleteContact.rejected]: (state, action) => {
+      state.status = 'rejected';
+      state.error = action.payload;
+    },
     // /////////////////////////////////////////
-  
-    // //////////////////////////////////////////////
-    // [editContacts.pending]: (state, action) => {
-    //   state.status = 'loading';
-    //   state.error = null;
-    //   state.editContact = null;
-    // },
-    // [editContacts.fulfilled]: (state, action) => {
-    //   state.status = 'resolved';
-    //   state.items = state.items.map(contact =>
-    //     contact.id === action.payload.id ? action.payload : contact
-    //   );
-    // },
-    // [editContacts.rejected]: (state, action) => {
-    //   state.status = 'rejected';
-    //   state.error = action.payload;
-    // },
+
+    [editContacts.pending]: (state, action) => {
+      state.status = 'loading';
+      state.error = null;
+      state.editContact = null;
+    },
+    [editContacts.fulfilled]: (state, action) => {
+      state.status = 'resolved';
+      state.items = state.items.map(contact =>
+        contact.id === action.payload.id ? action.payload : contact
+      );
+    },
+    [editContacts.rejected]: (state, action) => {
+      state.status = 'rejected';
+      state.error = action.payload;
+    },
   },
 });
 

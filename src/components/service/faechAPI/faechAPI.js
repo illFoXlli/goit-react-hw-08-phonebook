@@ -1,11 +1,16 @@
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
+
+const setMuiosBaseURL = () => {axios.defaults.baseURL = 'https://api.themoviedb.org/3';}
 // axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 
 export const faechApiTrending = async (page = 1) => {
+  setMuiosBaseURL()
+
   const API_KEY = 'e2cf33bcd0ee79f76f1c4fb556b38c1b';
-  const url = 'https://api.themoviedb.org/3/trending/movie/day';
+  const url = '/trending/movie/day';
+
   const params = {
     api_key: API_KEY,
     page: page,
@@ -20,8 +25,9 @@ export const faechApiTrending = async (page = 1) => {
 };
 
 export const faechApiMovie = async (search, page = 1) => {
+  setMuiosBaseURL()
   const API_KEY = 'e2cf33bcd0ee79f76f1c4fb556b38c1b';
-  const url = 'https://api.themoviedb.org/3/search/movie';
+  const url = '/search/movie';
   const params = {
     api_key: API_KEY,
     query: search,
@@ -37,8 +43,9 @@ export const faechApiMovie = async (search, page = 1) => {
 };
 
 export const faechApiMovieId = async (movie_id, page = 1) => {
+  setMuiosBaseURL()
   const API_KEY = 'e2cf33bcd0ee79f76f1c4fb556b38c1b';
-  const url = `https://api.themoviedb.org/3/movie/`;
+  const url = `/movie/`;
   const params = {
     api_key: API_KEY,
     page: page,
@@ -53,8 +60,9 @@ export const faechApiMovieId = async (movie_id, page = 1) => {
 };
 
 export const faechApiMovieCredits = async (movie_id, page = 1) => {
+  setMuiosBaseURL()
   const API_KEY = 'e2cf33bcd0ee79f76f1c4fb556b38c1b';
-  const url = `https://api.themoviedb.org/3/movie/`;
+  const url = `/movie/`;
   const params = {
     api_key: API_KEY,
     page: page,
@@ -69,8 +77,9 @@ export const faechApiMovieCredits = async (movie_id, page = 1) => {
 };
 
 export const faechApiMovieReviews = async (movie_id, page = 1) => {
+  setMuiosBaseURL()
   const API_KEY = 'e2cf33bcd0ee79f76f1c4fb556b38c1b';
-  const url = `https://api.themoviedb.org/3/movie/`;
+  const url = `/movie/`;
   const params = {
     api_key: API_KEY,
     page: page,

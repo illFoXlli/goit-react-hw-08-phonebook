@@ -1,6 +1,6 @@
 import { useParams, Outlet, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { faechApiMovieId } from '../../components/service/faechAPI';
+import { faechApiMovieId } from '../../components/service/faechAPI/faechAPI';
 
 import Box from '../../components/service/Box';
 import {

@@ -2,7 +2,8 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import {
     postRegister,
     postLogIn,
-    postLogOut
+    postLogOut,
+    fetchCurrentUser
 } from '../../utils/api';
 
 
@@ -42,3 +43,23 @@ export const logIn = createAsyncThunk(
     }
   );
 
+  export const getCurrentUser = createAsyncThunk(
+    'auth/getCurrentUser',
+    async function (_, { rejectWithValue, getState }) {
+      const state = getState()
+      const token = state.auth.token
+
+      if(!token){
+        return rejectWithValue()
+      }
+      try {
+        
+          const data = await fetchCurrentUser(token);
+          return data;
+      } catch (error) {
+        return rejectWithValue(error.message);
+      }
+    }
+  );
+
+  

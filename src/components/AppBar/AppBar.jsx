@@ -21,7 +21,7 @@ const navItems = [
 ];
 
 const AppBar = () => {
-  const isLoggrdIn = useSelector(getIsLoggrdIn);
+  const isLoggedIn = useSelector(getIsLoggrdIn);
 
   return (
     <>
@@ -37,7 +37,7 @@ const AppBar = () => {
               </WrapperHome>
 
           <Wrapper>
-            {isLoggrdIn?<UserMenu/>: <NavStyled>
+            {isLoggedIn?<UserMenu/>: <NavStyled>
             {navItems.map(({ href, text }) => (
               <LinkItemNav to={href} key={href}>
                 {text}

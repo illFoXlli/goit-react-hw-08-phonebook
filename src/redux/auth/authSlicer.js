@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-import {register, logIn, logOut} from "./authOpiretion"
+import {register, logIn, logOut, getCurrentUser} from "./authOpiretion"
 
 
 const initialState = {
     user: { name: null, email: null},
     token: null,
-    isLoggrdIn: false,
+    isLoggedIn: false,
     TEST: true,
     error: null,
 }
@@ -19,8 +19,8 @@ const authSlice = createSlice({
 
         state.user = action.payload.user;
         state.token = action.payload.token;
-        state.isLoggrdIn = true;
-        // state.auth.isLoggrdIn = true;
+        state.isLoggedIn = true;
+        // state.auth.isLoggedIn = true;
        
       },
       [register.rejected]: (state, action) => {
@@ -30,7 +30,7 @@ const authSlice = createSlice({
       [logIn.fulfilled]: (state, action) => {
         state.user = action.payload.user;
         state.token = action.payload.token;
-        state.isLoggrdIn = true;
+        state.isLoggedIn = true;
 
       },
       [logIn.rejected]: (state, action) => {
@@ -40,14 +40,22 @@ const authSlice = createSlice({
       [logOut.fulfilled]: (state, action) => {
         state.user = { name: null, email: null};
         state.token = null;
-        state.isLoggrdIn = false;
+        state.isLoggedIn = false;
       },
       [logOut.rejected]: (state, action) => {
         state.error = action.payload;
       },
-  }
+      //////////////////////////////////////
+      [getCurrentUser.fulfilled]: (state, action) => {
+        state.isLoggedIn = true;
+        state.user = { name: action.payload.name, email: action.payload.email}
 
-  
+
+      },
+      [getCurrentUser.rejected]: (state, action) => {
+        state.error = action.payload;
+      },
+  } 
 })
 
 export const authReducer = authSlice.reducer;
