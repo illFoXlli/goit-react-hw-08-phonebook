@@ -28,8 +28,9 @@ export const LinkItemNav = styled(NavLink)`
   color: #eaf818;
   text-shadow: 1px 1px 2px black;
 
-  padding-top: 20px;
-  padding-bottom: 50px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-left: 15px;
 
   text-decoration: none;
   font-size: 34px;
@@ -52,15 +53,19 @@ export const LinkItemNav = styled(NavLink)`
 `;
 
 export const Wrapper = styled.div`
+display: flex ;
+
   color: tomato;
 
   margin-right: 30px;
-  margin-top: 15px;
+  margin-top: 0px;
+
+  align-items: center
 `;
 
 export const WrapperHome = styled.div`
- 
+ display:flex ;
   margin-left: 30px;
-  margin-top: 15px;
+  margin-top: 0px;
 `;
 

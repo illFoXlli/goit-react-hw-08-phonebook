@@ -98,4 +98,20 @@ export const getEditContacts = async contact => {
     throw error;
   }
 };
+/////////////////////////////////////////////////////
 
+const setAvatarBaseURL = () => {
+  axios.defaults.baseURL = 'http://placekitten.com/g/160/120';
+};
+
+
+export const postAvatarCat = async () => {
+  setAvatarBaseURL();
+
+  try {
+    const { data } = await axios.get();
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};

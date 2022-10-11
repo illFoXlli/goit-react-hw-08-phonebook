@@ -9,6 +9,7 @@ import {
   LabelName,
   LabelNumber,
   ButtonSubmit,
+  Wrapper,
 } from './ContactForm.styled';
 import { getEditContact, getContacts } from 'redux/contacts/contactSelector';
 
@@ -58,7 +59,7 @@ const ContactForm = () => {
   }, [editContact]);
 
   return (
-    <>
+   
       <FormSubmit onSubmit={addContactSubmite}>
         <LabelName>
           Имя:
@@ -94,7 +95,7 @@ const ContactForm = () => {
           Add contact
         </ButtonSubmit>
       </FormSubmit>
-    </>
+
   );
 };
 

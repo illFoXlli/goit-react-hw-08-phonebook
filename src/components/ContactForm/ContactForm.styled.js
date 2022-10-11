@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import Button from '@mui/material/Button';
 
 export const FormSubmit = styled.form`
-margin-top: 80px
-;
+margin-top:20px;
+  margin-left: 20px;
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -12,9 +12,10 @@ margin-top: 80px
   padding: 20px;
   border: 2px solid rgb(255, 99, 71);
   box-shadow: 0px 2px 8px 0px rgba(227, 102, 212, 0.2);
-  background-color:   rgba(167, 90, 49, .4);
+  background-color:   rgba(169, 170, 174 .4);
   backdrop-filter: blur(5px);
   border-radius: 10px;
+  pointer-events: auto;
 `;
 
 const LabelForm = styled.label`
@@ -37,9 +38,11 @@ export const LabelNumber = styled(LabelForm)``;
 export const Input = styled.input``;
 export const ButtonSubmit = styled(Button)`
   :hover {
-    background-color: #89a048;
+    background-color: rgba(255, 99, 71, .4);
     color: white;
   }
   color: black;
   padding: 10px;
 `;
+
+

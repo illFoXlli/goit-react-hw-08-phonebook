@@ -34,9 +34,10 @@ img {
   overflow: hidden;
 }
 body {
- 
+ min-height: 100vh;
   background-color: #0e0e0e;
   color: #0e0e0e;
+  /* text-shadow: 1px 1px 2px black; */
 
   font-family: "Lobster",cursive;
   background: #2980b9; /* fallback for old browsers */
@@ -78,4 +79,8 @@ body {
 
 code {
   font-family: "Lobster",cursive;
+}
+
+#root{
+  height: 100vh;
 }

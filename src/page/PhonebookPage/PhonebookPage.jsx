@@ -1,11 +1,11 @@
 import ContactForm from '../../components/ContactForm';
 import ContactsList from '../../components/ContactsList';
 import Filter from '../../components/Filter';
-import Wrapper from '../../components/Wrapper';
+
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchContacts } from '../../redux/contacts/contactsOpiretion';
-import {DivStuleWrraper} from "./PhonebookPage.styled"
+import {DivStuleWrraper, TitlePhonebook, Wrapper, WrapperCenter, TitleFilter} from "./PhonebookPage.styled"
 import Container from "../../components/Container"
 
 
@@ -30,19 +30,24 @@ import Container from "../../components/Container"
          
         }}
       >
+        <WrapperCenter>
         <Wrapper>
-          <h2>Phonebook</h2>
+          <TitlePhonebook>Phonebook</TitlePhonebook>
           <ContactForm />
-          <h2>Filter Contacts</h2>
+          <TitleFilter>Filter Contacts</TitleFilter>
           <Filter />
           {/* {status === 'loading' && <h2>Loading...</h2>}
           {error && <h2>An error occured: {error}</h2>} */}
         </Wrapper>
-        <Wrapper>
+        <Wrapper> 
+         
+          
           <ContactsList />
         </Wrapper>
+        </WrapperCenter>
       </DivStuleWrraper>
     </Container>
+    
   );
 };
 export default PhonebookPage

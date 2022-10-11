@@ -13,12 +13,16 @@ export const Contacts = styled.ul`
   list-style: none;
   border-radius: 5px;
 
-  margin-top: 70px;
+  margin-top: 202px;
   padding: 20px;
-  border: 2px solid rgb(155, 191, 49);
+  
+
+  border: 2px solid rgb(255, 99, 71);
   box-shadow: 0px 2px 8px 0px rgba(227, 102, 212, 0.2);
-  background-color: pink;
+  background-color:   rgba(169, 170, 174 .4);
+  backdrop-filter: blur(5px);
   border-radius: 10px;
+  pointer-events: auto;
 `;
 
 export const ContactsItem = styled.li`

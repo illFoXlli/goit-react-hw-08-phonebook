@@ -33,7 +33,7 @@ const LoginView = () => {
   };
 
   return (
-    <>
+    <div>
       <SubmitForm onSubmit={handleSubmit}>
         <Label >
           Email
@@ -67,7 +67,7 @@ const LoginView = () => {
       <LinkNewStyled to="/login">
         Create your Phonebook account
       </LinkNewStyled>
-    </>
+    </div>
   );
 }
 

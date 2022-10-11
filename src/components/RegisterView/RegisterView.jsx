@@ -1,7 +1,7 @@
 import { useState } from "react";
 import {register} from "../../redux/auth/authOpiretion";
 import { useDispatch } from "react-redux";
-import {SubmitForm, Label, Input, Btn} from "./RegisterView.styled"
+import {SubmitForm, Label, Input, Btn, Wrapper} from "./RegisterView.styled"
 
 const RegisterView = () =>{
   const dispatch = useDispatch();
@@ -37,6 +37,7 @@ const RegisterView = () =>{
   };
 
   return (
+    <Wrapper>
     <SubmitForm onSubmit={handleSubmit}>
    
       <Label >
@@ -78,6 +79,7 @@ const RegisterView = () =>{
         Sign up
       </Btn>
       </SubmitForm>
+      </Wrapper>
   );
 }
 
