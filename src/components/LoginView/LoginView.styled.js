@@ -9,6 +9,7 @@ export const SubmitForm = styled.form`
     width: 350px;
     margin: 0 auto;
     align-items: center;
+    margin-top: 30px;
 `
 
 export const Label = styled.label`
@@ -77,12 +78,22 @@ export const LinkNewStyled = styled(Link)`
     height: 30px;
     border-radius: 5px;
     text-transform: none;
+    margin: 0 auto;
     background-image: linear-gradient(
       to right,
       #eaf818 0%,
     #ff970c 51%,
     #eaf818 100%
     );
+    
+`
+export const Span = styled.span`
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
 `
 
   

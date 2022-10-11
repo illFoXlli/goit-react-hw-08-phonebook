@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import {logIn} from "../../redux/auth/authOpiretion";
-import { SubmitForm, Label, Btn, Input , LinkNewStyled} from "./LoginView.styled";
+import { SubmitForm, Label, Btn, Input , LinkNewStyled, Span} from "./LoginView.styled";
 
 
 const LoginView = () => {
@@ -63,7 +63,7 @@ const LoginView = () => {
           Log in
         </Btn>
       </SubmitForm>
-      <span >New to Phonebook?</span>
+      <Span >New to Phonebook?</Span>
       <LinkNewStyled to="/login">
         Create your Phonebook account
       </LinkNewStyled>

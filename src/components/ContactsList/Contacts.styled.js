@@ -6,7 +6,7 @@ export const Contacts = styled.ul`
   margin: 0;
   margin-bottom: 8px;
 
-  max-height: 300px;
+  max-height: 350px;
 
   overflow-y: scroll;
   scroll-behavior: smooth;

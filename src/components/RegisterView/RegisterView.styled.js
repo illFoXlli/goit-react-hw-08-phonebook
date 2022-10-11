@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const SubmitForm = styled.form`
+
   padding: 15px;
   display: flex;
   flex-direction: column;
@@ -8,6 +9,7 @@ export const SubmitForm = styled.form`
   width: 350px;
   margin: 0 auto;
   align-items: center;
+  margin-top: 30px;
 `;
 
 export const Label = styled.label`
