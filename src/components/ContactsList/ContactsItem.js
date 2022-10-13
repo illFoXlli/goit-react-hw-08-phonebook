@@ -2,13 +2,12 @@ import * as React from 'react';
 import { useRef } from 'react';
 import PropTypes from 'prop-types';
 
-import { ContactsItem, IconButtonNew } from './Contacts.styled';
+import { ContactsItem } from './Contacts.styled';
 import Stack from '@mui/material/Stack';
 import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact } from '../../redux/contacts/contactsOpiretion';
-// import { error } from '../utils/error';
 import { BsFillAlarmFill } from 'react-icons/bs';
 import { FiEdit } from 'react-icons/fi';
 import { editContactsAction } from '../../redux/contacts/contactsSlicer';

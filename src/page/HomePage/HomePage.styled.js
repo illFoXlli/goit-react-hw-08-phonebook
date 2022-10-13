@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import  { keyframes } from 'styled-components'
 
-// Create the keyframes
 const trackingInExpand = keyframes`
     0% {
       letter-spacing: -0.5em;

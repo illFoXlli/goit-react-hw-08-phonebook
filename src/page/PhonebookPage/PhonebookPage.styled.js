@@ -14,7 +14,7 @@ height:100vh ;
 `;
 export const TitlePhonebook = styled.h2`
 
-    margin-top: 135px;
+margin-top: 135px;
     pointer-events: auto;
     text-align: center;
     margin-bottom: 30px;
@@ -22,6 +22,15 @@ export const TitlePhonebook = styled.h2`
     text-shadow: 1px 2px 5px black;
     color: rgb(255, 99, 71);
     font-size: 32px ;
+    @media screen and (min-width: 768px) {
+    margin-right: auto;
+    margin-left: auto;
+
+    
+  }
+  @media screen and (min-width: 1280px) {
+    
+  }
 `
 export const TitleFilter = styled.h2`
 
@@ -37,21 +46,45 @@ export const TitleFilter = styled.h2`
 color: rgb(255, 99, 71);
 font-size: 32px ;
 
-
+@media screen and (min-width: 1280px) {
+    
+  }
 `  
 
 export const Wrapper = styled.div`
 height:100vh ;
-margin-top: auto;
-margin-bottom: auto;
+
   width: 460px;
-  padding: 0 20px;
-  pointer-events: none
+  padding: 0 ;
+  pointer-events: none;
+
+  @media screen and (min-width: 768px) {
+    
+    margin-right: auto;
+    margin-left: auto;
+    
+  }
+  @media screen and (min-width: 1280px) {
+    
+  justify-content:center;
+  margin-top: auto;
+margin-bottom: auto;
+padding: 0 20px;
+  }
   `
   export const WrapperCenter = styled.div`
-  display: flex;
+  
+  @media screen and (min-width: 768px) {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  @media screen and (min-width: 1280px) {
+    display: flex;
   justify-content:center;
-  /* width: 800px;
-  margin-left: auto;
-  margin-right:auto; */
-  `
+  margin-top: auto;
+margin-bottom: auto;
+  }
+
+
+`
+

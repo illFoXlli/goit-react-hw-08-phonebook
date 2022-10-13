@@ -9,7 +9,6 @@ import {
   LabelName,
   LabelNumber,
   ButtonSubmit,
-  Wrapper,
 } from './ContactForm.styled';
 import { getEditContact, getContacts } from 'redux/contacts/contactSelector';
 

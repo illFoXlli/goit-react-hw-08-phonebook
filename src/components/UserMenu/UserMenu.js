@@ -2,9 +2,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   Btn,
   Name,
-  LinkStyle,
-  Btn41,
-  BtnSpan,
   Wrapper,
   Img
 } from './UserMenu.styled';

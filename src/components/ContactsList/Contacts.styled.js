@@ -1,5 +1,5 @@
 import IconButton from '@mui/material/IconButton';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 export const Contacts = styled.ul`
   padding: 0;
@@ -13,7 +13,7 @@ export const Contacts = styled.ul`
   list-style: none;
   border-radius: 5px;
 
-  margin-top: 202px;
+  margin-top: 100px;
   padding: 20px;
   
 
@@ -23,6 +23,14 @@ export const Contacts = styled.ul`
   backdrop-filter: blur(5px);
   border-radius: 10px;
   pointer-events: auto;
+
+  @media screen and (min-width: 768px) {
+ 
+    
+  }
+  @media screen and (min-width: 1280px) {
+    margin-top: 202px;
+  }
 `;
 
 export const ContactsItem = styled.li`

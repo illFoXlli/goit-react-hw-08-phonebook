@@ -64,7 +64,7 @@ const LoginView = () => {
         </Btn>
       </SubmitForm>
       <Span >New to Phonebook?</Span>
-      <LinkNewStyled to="/login">
+      <LinkNewStyled to="/register">
         Create your Phonebook account
       </LinkNewStyled>
     </div>

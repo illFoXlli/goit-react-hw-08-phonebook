@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import {
   Container,
@@ -36,14 +35,14 @@ const AppBar = () => {
           <Wrapper>
             {isLoggedIn ? (
               <UserMenu />
-            ) : (
+            ) : (<><p>My Phonebook</p>
               <NavStyled>
                 {navItems.map(({ href, text }) => (
                   <LinkItemNav to={href} key={href}>
                     {text}
                   </LinkItemNav>
                 ))}
-              </NavStyled>
+              </NavStyled></>
             )}
           </Wrapper>
         </HeaderStyled>

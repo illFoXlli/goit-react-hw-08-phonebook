@@ -32,10 +32,16 @@ export const Btn = styled.button`
 ` 
 
   export const Name = styled.span`
-     font-size: 20px;
+     font-size: 16px;
      text-shadow: 1px 1px 1px black;
      display: flex;
     align-items: center;
+    @media screen and (min-width: 768px) {
+      font-size: 20px;
+  }
+  @media screen and (min-width: 1280px) {
+
+  }
 
   `
 
@@ -52,10 +58,20 @@ display: flex ;
 align-items: center;
 `
 export const Img = styled.img`
-width: 50px ;
-height: 50px;
+ margin-left: 10px;
+width: 35px ;
+height: 35px;
 border-radius: 50% ;
 border: 1px solid  rgba(205, 124, 7, 0.52);
 box-shadow: 0px 0px 20px 12px rgba(205, 124, 7, 0.52) inset;
 box-shadow: 0px 0px 20px 12px rgba(205, 124, 7, 0.52);
+
+@media screen and (min-width: 768px) {
+      margin-left: 10px ;
+      width: 50px ;
+height: 50px;
+  }
+  @media screen and (min-width: 1280px) {
+
+  }
 `
