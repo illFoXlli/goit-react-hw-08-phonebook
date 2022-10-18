@@ -54,9 +54,11 @@ font-size: 32px ;
 export const Wrapper = styled.div`
 height:100vh ;
 
-  width: 460px;
+ max-width: 460px;
   padding: 0 ;
   pointer-events: none;
+  margin-right: auto;
+    margin-left: auto;
 
   @media screen and (min-width: 768px) {
     

@@ -19,13 +19,11 @@ const Error = lazy(() => import('../../page/ErrorPage'));
 const PhonebookPage = lazy(() => import('../../page/PhonebookPage'));
 
 export const App = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  useEffect(()=>{
-    dispatch(getCurrentUser()) 
-  },[dispatch])
-
-
+  useEffect(() => {
+    dispatch(getCurrentUser());
+  }, [dispatch]);
 
   return (
     <Suspense fallback={<Loader />}>
@@ -67,3 +65,31 @@ export const App = () => {
     </Suspense>
   );
 };
+// 1
+// 2.3
+// 4.5.6
+// 7.8.9.10
+// 11.12.13.14.15
+// 16.17.18.19.20.21
+
+const foo = (num) => {
+  let numsI = 0;
+  let step = 1;
+  let nums = 0;
+
+  const fn = () => {
+    for (let i = nums + 1; i <= nums + step; i += 1) {
+      numsI = i;
+      if (i === num) return;
+    }
+    if (num > nums) {
+      step += 1;
+      nums = numsI;
+      fn();
+    }
+  };
+  fn();
+  return step;
+};
+
+console.log("foo(1) :>> ", foo(13));

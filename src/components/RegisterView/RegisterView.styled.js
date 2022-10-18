@@ -6,10 +6,17 @@ export const SubmitForm = styled.form`
   display: flex;
   flex-direction: column;
   border: 1px solid white;
-  width: 350px;
+  max-width: 350px;
   margin: 0 auto;
   align-items: center;
   margin-top: 30px;
+
+  @media screen and (min-width: 768px) {
+    width: 350px;
+  }
+
+  @media screen and (min-width: 1280px) {
+  }
 `;
 
 export const Label = styled.label`
